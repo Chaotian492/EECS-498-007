@@ -268,8 +268,9 @@ class Solver(object):
                             self.loss_history[-1],
                         )
                     )
-                    print("End of training; next iteration "
-                          "will exceed the time limit.")
+                    print(
+                        "End of training; next iteration " "will exceed the time limit."
+                    )
                     break
             prev_time = cur_time
 
@@ -301,14 +302,12 @@ class Solver(object):
                 first_it = t == 0
                 last_it = t == num_iterations - 1
                 if first_it or last_it or epoch_end:
-                    train_acc = \
-                        self.check_accuracy(self.X_train,
-                                            self.y_train,
-                                            num_samples=self.num_train_samples)
-                    val_acc = \
-                        self.check_accuracy(self.X_val,
-                                            self.y_val,
-                                            num_samples=self.num_val_samples)
+                    train_acc = self.check_accuracy(
+                        self.X_train, self.y_train, num_samples=self.num_train_samples
+                    )
+                    val_acc = self.check_accuracy(
+                        self.X_val, self.y_val, num_samples=self.num_val_samples
+                    )
                     self.train_acc_history.append(train_acc)
                     self.val_acc_history.append(val_acc)
                     self._save_checkpoint()
