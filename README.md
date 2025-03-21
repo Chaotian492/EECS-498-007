@@ -1,1 +1,2 @@
 - finish fully_conneted_network
+- finish convolutional_network 25-03-21

@@ -102,8 +102,8 @@ class ReLU(object):
         # in-place operation.                             #
         ###################################################
         # Replace "pass" statement with your code
-        zero_x = torch.zeros_like(x)
-        out = torch.maximum(x, zero_x)
+        # 所有负数置为零
+        out = x.clamp(min=0)
         ###################################################
         #                 END OF YOUR CODE                #
         ###################################################
@@ -128,10 +128,8 @@ class ReLU(object):
         # in-place operation.                               #
         #####################################################
         # Replace "pass" statement with your code
-        x[x > 0] = 1
-        x[x < 0] = 0
-
-        dx = x * dout
+        # (x > 0) 会生成一个bool张量，大于0为True，小于0为False
+        dx = dout * (x > 0)
         #####################################################
         #                  END OF YOUR CODE                 #
         #####################################################
