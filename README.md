@@ -1,2 +1,3 @@
 - finish fully_conneted_network
 - finish convolutional_network 25-03-21
+- finish pytorch_autograd_and_nn 25-03-29
